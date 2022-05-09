@@ -32,19 +32,23 @@ namespace TechJobsOO
 
         }
 
+        // TODO: Generate Equals() and GetHashCode() methods.
+
+
         public override bool Equals(object obj)
         {
             return obj is Job job &&
                    Id == job.Id;
         }
 
-
-        // TODO: Generate Equals() and GetHashCode() methods.
-
         public override int GetHashCode()
         {
             return HashCode.Combine(Id);
         }
 
+        public override string ToString()
+        {
+            return base.ToString();
+        }
     }
 }
