@@ -22,14 +22,29 @@ namespace TechJobsOO
         }
 
 
-        public Job(string name, string employerName, string employerLocation, string jobType, string jobCoreCompetency)
+        public Job(string name, Employer employerName, Location employerLocation, PositionType jobType, CoreCompetency jobCoreCompetency)
         {
-   
-            
+            Name = name;
+            EmployerName = employerName;
+            EmployerLocation = employerLocation;
+            JobType = jobType;
+            JobCoreCompetency = jobCoreCompetency;
 
+        }
+
+        public override bool Equals(object obj)
+        {
+            return obj is Job job &&
+                   Id == job.Id;
         }
 
 
         // TODO: Generate Equals() and GetHashCode() methods.
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(Id);
+        }
+
     }
 }
