@@ -6,6 +6,7 @@ namespace JobTests
     [TestClass]
     public class JobTests
     {
+
         [TestMethod]
         public void TestMethod1()
         {
@@ -28,6 +29,25 @@ namespace JobTests
         public void TestJobConstructorSetsAllFields()
         {
 
+
+            Job job1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+
+            Assert.IsTrue("Product tester" == job1.Name);
+            Assert.IsTrue("ACME" == job1.EmployerName.Value);
+            Assert.IsTrue("Desert" == job1.EmployerLocation.Value);
+            Assert.IsTrue("Quality control" == job1.JobType.Value);
+            Assert.IsTrue("Persistence" == job1.JobCoreCompetency.Value);
+        }
+
+
+
+        [TestMethod]
+        public void TestJobsForEquality()
+        {
+            Job equality1 = new Job("TA", new Employer("LaunchCode"), new Location("Space"), new PositionType("JAVA"), new CoreCompetency("Fun"));
+            Job equality2 = new Job("TA", new Employer("LaunchCode"), new Location("Space"), new PositionType("JAVA"), new CoreCompetency("Fun"));
+
+            Assert.IsFalse(equality1 == equality2);
 
         }
     }
