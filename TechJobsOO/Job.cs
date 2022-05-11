@@ -49,8 +49,8 @@ namespace TechJobsOO
         public override string ToString()
         {
             return
-           
-            $" ID: {Id}\n" +
+
+            $"ID: {Id}\n" +
             $"Name: {Name}\n" +
             $"Employer: {EmployerName.Value}\n" +
             $"Location: {EmployerLocation.Value}\n" +

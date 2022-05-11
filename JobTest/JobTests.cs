@@ -56,14 +56,14 @@ namespace JobTests
         {
             Job job3 = new Job("Ice cream taster", new Employer("Bassetts"), new Location("Philadelphia"), new PositionType("reviewer"), new CoreCompetency("yum"));
 
-            Assert.AreEqual(job3.ToString(),
-                $"ID:{job3.Id}\n" +
+            Assert.AreEqual(
+                $"ID: {job3.Id}\n" +
                 $"Name: {job3.Name}\n" +
                 $"Employer: {job3.EmployerName}\n" +
                 $"Location: {job3.EmployerLocation}\n" +
                 $"Position Type: {job3.JobType}\n" +
-                $"Core Competency: {job3.JobCoreCompetency}\n");
-
+                $"Core Competency: {job3.JobCoreCompetency}\n",
+                job3.ToString());
         }
 
     }
