@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TechJobsOO;
 
 namespace JobTests
@@ -56,8 +57,11 @@ namespace JobTests
         {
             Job job3 = new Job("Ice cream taster", new Employer("Bassetts"), new Location("Philadelphia"), new PositionType("reviewer"), new CoreCompetency("yum"));
 
+
+
+
             Assert.AreEqual(
-                $"ID: {job3.Id}\n" +
+                $"\nID: {job3.Id}\n" +
                 $"Name: {job3.Name}\n" +
                 $"Employer: {job3.EmployerName}\n" +
                 $"Location: {job3.EmployerLocation}\n" +
@@ -65,6 +69,16 @@ namespace JobTests
                 $"Core Competency: {job3.JobCoreCompetency}\n",
                 job3.ToString());
         }
+
+        [TestMethod]
+        public void TestEmpty()
+        {
+            Job job4 = new Job("Ice cream tester", new Employer(), new Location("Home"), new PositionType("UX"), new CoreCompetency("Tasting ability"));
+
+            Console.WriteLine(job4);
+        }
+
+
 
     }
 }

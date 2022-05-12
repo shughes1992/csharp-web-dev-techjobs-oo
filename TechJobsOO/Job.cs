@@ -22,7 +22,7 @@ namespace TechJobsOO
         }
 
 
-        public Job(string name, Employer employerName, Location employerLocation, PositionType jobType, CoreCompetency jobCoreCompetency)
+        public Job(string name, Employer employerName, Location employerLocation, PositionType jobType, CoreCompetency jobCoreCompetency): this()
         {
             Name = name;
             EmployerName = employerName;
@@ -48,14 +48,36 @@ namespace TechJobsOO
 
         public override string ToString()
         {
+            if (String.IsNullOrEmpty(Name))
+            {
+                Name = "Data not available";
+            }
+            if (String.IsNullOrEmpty(EmployerName.Value))
+            {
+                EmployerName.Value = "Data not available";
+            }
+            if (String.IsNullOrEmpty(EmployerLocation.Value))
+            {
+                EmployerLocation.Value = "Data not available";
+            }
+            if (String.IsNullOrEmpty(JobType.Value))
+            {
+                JobType.Value = "Data not available";
+            }
+            if (String.IsNullOrEmpty(JobCoreCompetency.Value))
+            {
+                JobCoreCompetency.Value = "Data not available";
+            }
             return
 
-            $"ID: {Id}\n" +
+            $"\nID: {Id}\n" +
             $"Name: {Name}\n" +
             $"Employer: {EmployerName.Value}\n" +
             $"Location: {EmployerLocation.Value}\n" +
             $"Position Type: {JobType.Value}\n" +
             $"Core Competency: {JobCoreCompetency.Value}\n";
+
+
 
 
         }
