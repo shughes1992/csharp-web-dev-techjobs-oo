@@ -25,12 +25,9 @@ namespace JobTests
             Assert.IsTrue(idTestJob1.Id == idTestJob2.Id - 1);
         }
 
-
         [TestMethod]
         public void TestJobConstructorSetsAllFields()
         {
-
-
             Job job1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
             Assert.IsTrue("Product tester" == job1.Name);
@@ -40,8 +37,6 @@ namespace JobTests
             Assert.IsTrue("Persistence" == job1.JobCoreCompetency.Value);
         }
 
-
-
         [TestMethod]
         public void TestJobsForEquality()
         {
@@ -49,16 +44,12 @@ namespace JobTests
             Job equality2 = new Job("TA", new Employer("LaunchCode"), new Location("Space"), new PositionType("JAVA"), new CoreCompetency("Fun"));
 
             Assert.IsFalse(equality1 == equality2);
-
         }
 
         [TestMethod]
         public void TestToString()
         {
             Job job3 = new Job("Ice cream taster", new Employer("Bassetts"), new Location("Philadelphia"), new PositionType("reviewer"), new CoreCompetency("yum"));
-
-
-
 
             Assert.AreEqual(
                 $"\nID: {job3.Id}\n" +
@@ -73,13 +64,10 @@ namespace JobTests
         [TestMethod]
         public void TestEmpty()
         {
-            Job job4 = new Job("Ice cream tester", new Employer(), new Location("Home"), new PositionType("UX"), new CoreCompetency("Tasting ability"));
+            Job job4 = new Job("Ice cream tester", new Employer(""), new Location("Home"), new PositionType("UX"), new CoreCompetency("Tasting ability"));
 
             Console.WriteLine(job4);
         }
-
-
-
     }
 }
 
