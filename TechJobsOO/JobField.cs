@@ -35,17 +35,3 @@ namespace TechJobsOO
     }
 
 }
-
-
-
-//Create a new class called JobField.
-//Consider the following questions to help you decide what code to put in the JobField class:
-//What fields do ALL FOUR of the classes have in common? 
-
-
-//Which constructors are the same in ALL FOUR classes?
-//Which custom methods are identical in ALL of the classes?
-//In JobField, declare each of the common class members.
-//Code the constructors.
-//Add in any inherited method overrides.
-//Finally, to prevent the creation of a JobField object, make this class abstract.

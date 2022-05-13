@@ -64,15 +64,16 @@ namespace JobTests
         [TestMethod]
         public void TestEmpty()
         {
-            Job job4 = new Job("Ice cream tester", new Employer(""), new Location("Home"), new PositionType("UX"), new CoreCompetency("Tasting ability"));
+            Job job4 = new Job("Ice cream tester", new Employer(""), new Location(""), new PositionType("Intern"), new CoreCompetency("Tasting ability"));
 
-            Console.WriteLine(job4);
+            Assert.AreEqual(
+                $"\nID: {job4.Id}\n" +
+                $"Name: Ice cream tester\n" +
+                $"Employer: Data not available\n" +
+                $"Location: Data not available\n" +
+                $"Position Type: Intern\n" +
+                $"Core Competency: Tasting ability\n",
+                job4.ToString());
         }
     }
 }
-
-
-//4 tests for ToString
-//job test needs ot connect to job class
-//3  can be  completed w.o TDD & ONE REQUIRES TDD
-//very robust & our JOB is supposed to return (example picture)
